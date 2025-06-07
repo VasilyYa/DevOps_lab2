@@ -27,7 +27,7 @@
 > ansible-playbook --version
 
 4. создаем конфиги ansible (playbook и inventory)
-см. файлы inventory.ini и playbook.yml
+см. файлы inventory.ini и playbook.yml, а также индексный файл nginx для копирования
 
 5. Запускаем плейбук
 > ansible-playbook ./playbook.yml -i ./inventory.ini --check (тестовый прогон --check, но для некоторых команд может быть неидемпотентным!)
