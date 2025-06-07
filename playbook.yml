@@ -1,0 +1,21 @@
+---
+- name: Ensure nginx deployed
+  hosts: webservers
+  remote_user: runner
+  become: true
+  become_method: sudo
+
+  tasks:
+  - name: Ensure nginx installed
+    ansible.builtin.apt:
+      name: nginx
+      state: latest
+      update_cache: true
+
+  - name: Ensure index file exists with content
+    ansible.builtin.copy:
+      src: ./index.html
+      dest: /var/www/html/index.html
+      owner: root
+      group: root
+      mode: '0666'
